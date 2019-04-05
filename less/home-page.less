@@ -15,15 +15,28 @@
   }
 
   .space-images {
-    display: flex;
-    flex-wrap: wrap;
+   
     width: 100%;
-
+    @media @mobile {
+     .launch {
+       position: relative;
+       left: -900px;
+     }
+     .sky {
+        position: relative;
+        left: -333px;
+      }
+     .blast {
+       width:100%;
+     }
+     }
+    
     img {
       width: 28%;
       margin: 20px 2.5%;
       border-radius: 20px;
       height: 100%;
+      }
     }
   }
 
@@ -45,10 +58,21 @@
     padding: 50px 60px;
     display: flex;
     justify-content: center;
+    @media @mobile {
+      width: 100%;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-text: center;
+      #a { order:2}
+      #b { order:1}
+      #c {order: 3}
+      #img {order: -1}
+ 
+    }
 
     .walk-text {
       width: 50%;
-
       h3 {
         margin-bottom: 10px;
       }
@@ -58,7 +82,8 @@
       }
 
       .btn {
-        .button-creator(200px, 45px, blue, red, 1.8rem);
+        .button-creator(200px, 45px, darkblue, white, 1.8rem);
+        .center()
 
     
     }
@@ -66,13 +91,19 @@
     .walk-img {
       width: 46%;
       margin-left: 4%;
+      @media @mobile  {
+        display: block; 
+        float: none; 
+        width: 100%;
+    }
+}
       
       img {
         width: 100%;
         height: auto;
         border-radius: 10px;
+
       }
     }
   }
-}// home
-}
+// home
